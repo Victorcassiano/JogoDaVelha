@@ -1,0 +1,4 @@
+#Tue Jul 14 23:30:54 BRT 2020
+base.0=C\:\\Users\\jose_\\Documents\\FlutterAPPs\\TicToc\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
