@@ -62,8 +62,8 @@ class _HomePageState extends State<HomePage> {
         if (buttonsList.every((p) => p.text != "")) {
           showDialog(
               context: context,
-              builder: (_) => new CustomDialog("Jogo Armado",
-                  "Pressione o botão resetar para iniciar novamente.", resetGame));
+              builder: (_) => new CustomDialog("Jogo Empatado",
+                  "Pressione o botão resetar para iniciar novamente.\nSeus lixos ❤", resetGame));
         } else {
           //activePlayer == 2 ? autoPlay() : null;
         }
@@ -165,30 +165,30 @@ class _HomePageState extends State<HomePage> {
         appBar: new AppBar(
           title: new Center(child:new Text("Jogo da Velha")),
         ),
-        body: new Column(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             new Expanded(
               child: new GridView.builder(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(8.0),
                 gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     childAspectRatio: 1.0,
-                    crossAxisSpacing: 6.0,
-                    mainAxisSpacing: 6.0),
+                    crossAxisSpacing: 5.0,
+                    mainAxisSpacing: 5.0),
                 itemCount: buttonsList.length,
                 itemBuilder: (context, i) => new SizedBox(
                   width: 100.0,
                   height: 100.0,
                   child: new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(15.0),
                     onPressed: buttonsList[i].enabled
                         ? () => playGame(buttonsList[i])
                         : null,
                     child: new Text(
                       buttonsList[i].text,
-                      style: new TextStyle(color: Colors.white, fontSize: 20.0),
+                      style:  TextStyle(color: Colors.black, fontSize: 80.0),
                     ),
                     color: buttonsList[i].bg,
                     disabledColor: buttonsList[i].bg,
@@ -199,10 +199,10 @@ class _HomePageState extends State<HomePage> {
             new RaisedButton(
               child: new Text(
                 "Resetar",
-                style: new TextStyle(color: Colors.white, fontSize: 20.0),
+                style: new TextStyle(color: Colors.white, fontSize: 30.0),
               ),
               color: Colors.grey,
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(5.0),
               onPressed: resetGame,
             )
           ],
